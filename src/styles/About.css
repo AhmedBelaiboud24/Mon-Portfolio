@@ -1,0 +1,344 @@
+.A-propos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+}
+.img-ahmed{
+    width: 350px;
+    height: auto;
+    margin-right: 80px;
+    margin-top: 80px;
+}
+.presentation {
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px;
+    margin-top: 60px;
+}
+
+.presentation h1 {
+    font-size: 48px; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
+    color: var(--titre-color);
+}
+
+.presentation h2 {
+    font-size: 36px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+    color: var(--sous-titre-color);
+    display: flex;
+    align-items: start;
+    padding-bottom: 10px;
+}
+.presentation .desc{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color:  var( --text-color);
+}
+.Btn-cta{
+    margin-left: 135px;
+    margin-top: 25px;
+}
+@media (max-width: 768px) {
+    .A-propos{
+        display: flex;
+        flex-direction: column;
+    }
+    .A-propos .desc{
+        margin-right: px;
+        font-size: 12px;
+    }
+    .A-propos h1{
+        font-size: 35px;
+        align-items: center;
+    }
+    .A-propos h2{
+        font-size: 25px;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .presentation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        margin-left: 80px;
+    }
+    .img-ahmed{
+        width: 200px;
+        height: auto;
+        margin-left: 90px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .Btn-cta{
+        width: 80px;
+        height: 30px;
+        margin-left: 225px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .A-propos{
+        display: flex;
+        flex-direction: column;
+    }
+    .A-propos .desc{
+        margin-right: px;
+        font-size: 12px;
+    }
+    .A-propos h1{
+        font-size: 35px;
+        align-items: center;
+    }
+    .A-propos h2{
+        font-size: 25px;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .presentation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        margin-left: 80px;
+    }
+    .img-ahmed{
+        width: 200px;
+        height: auto;
+        margin-left: 90px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .Btn-cta{
+        width: 80px;
+        height: 30px;
+        margin-left: 225px;
+    }
+}
+@media (max-width: 480px) {
+    .Btn-cta{
+        width: 80px;
+        height: 30px;
+        margin-left: 100px;
+    }
+    .img-ahmed{
+        width: 200px;
+        height: auto;
+        margin-left: 120px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .A-propos h1{
+        font-size: 35px;
+        align-items: center;
+        margin-right: 50px;
+    }
+    .A-propos h2{
+        font-size: 25px;
+        align-items: center;
+        margin-right: 50px;
+    }
+}
+@media (max-width: 376px) {
+    
+    .Btn-cta{
+        width: 50px;
+        height: 30px;
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+    .A-propos h2{
+        font-size: 25px;
+        align-items: center;
+        margin-right: 40px;
+    }
+    .A-propos h1{
+        font-size: 35px;
+        align-items: center;
+        margin-left: 10px;
+    }
+}
+
+/* Nouveau style pour About minimaliste */
+.about-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 40px 0 0 0;
+}
+.about-main-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.about-name {
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--titre-color);
+    margin-bottom: 0.5rem;
+}
+.about-typing {
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--sous-titre-color);
+    margin-bottom: 1.5rem;
+    min-height: 2.2rem;
+}
+.about-btns {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .about-name {
+        font-size: 2rem;
+    }
+    .about-typing {
+        font-size: 1.1rem;
+    }
+    .about-btns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Nouveau style pour About détaillé/services */
+.about-detailed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+.about-services {
+    flex: 1 1 320px;
+    max-width: 400px;
+    background: var(--section-background-color);
+    border-radius: 18px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.services-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--titre-color);
+    text-align: left;
+}
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 1.5rem;
+}
+.service-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+.service-item h4 {
+    font-size: 1.1rem;
+    margin: 0 0 0.2rem 0;
+    color: var(--sous-titre-color);
+}
+.service-item p {
+    font-size: 0.98rem;
+    color: var(--text-color);
+    margin: 0;
+}
+.about-description {
+    flex: 2 1 400px;
+    max-width: 600px;
+    background: var(--section-background-color);
+    border-radius: 18px;
+    padding: 32px 32px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.desc-detailed h2 {
+    font-size: 2rem;
+    color: var(--titre-color);
+    margin-bottom: 1rem;
+}
+.desc-detailed p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+@media (max-width: 900px) {
+    .about-detailed {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .about-description, .about_services {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* Mise en page split pour About minimaliste */
+.about-split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.about-main-split {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 220px; /* Espace encore plus grand entre les deux parties */
+    max-width: 1100px;
+}
+.about-left {
+    flex: 1 1 350px;
+    min-width: 260px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.about-right {
+    flex: 1 1 300px;
+    min-width: 220px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-ahmed-minimal {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+@media (max-width: 900px) {
+    .about-main-split {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .about-left, .about-right {
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+    }
+    .img-ahmed-minimal {
+        width: 220px;
+    }
+}
