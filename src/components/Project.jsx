@@ -75,10 +75,10 @@ const Project = () => {
         {
             title: "Robbie Lens",
             description: "Création d'un site vitrine pour un photographe professionnel...",
-            descriptionDetail: "Ce projet a été réalisé pour présenter le travail d'un photographe professionnel, mettant en avant ses compétences et ses réalisations à travers un design moderne et épuré.",
+            descriptionDetail: "Projet réalisé dans le cadre de ma formation OpenClassrooms. Intégration d’un site vitrine pour une photographe freelance à partir d’une maquette fournie.",
             image: robie,
             moreImages: [robie1, robie2, robie3, robie4, robie5],
-            techs: ["React", "CSS", "Material UI"],
+            techs: ["HTML", "CSS"],
             date: "2024",
             github: "https://github.com/AhmedBelaiboud24/Robie-Lens_photographie"
         },
@@ -88,7 +88,7 @@ const Project = () => {
             descriptionDetail: "Ce site a été conçu pour une entreprise de paysagisme, mettant en avant ses services, ses réalisations et permettant aux clients de demander des devis en ligne.",
             image: GreenLeaf,
             moreImages: [green1, green2, green3, green4, green5, green6],
-            techs: ["WordPress", "CSS", "Figma"],
+            techs: ["WordPress",  "Elementor", "CSS"],
             date: "2024",
             github: null
         },
@@ -98,7 +98,7 @@ const Project = () => {
             descriptionDetail: "Ce projet a été réalisé pour un restaurant, mettant en avant son menu, ses services et permettant aux clients de réserver une table en ligne.",
             image: Eclat,
             moreImages: [eclat1, eclat2, eclat3, eclat4, eclat5],
-            techs: ["WordPress", "Bootstrap"],
+            techs: ["HTML", "CSS", "JavaScript"],
             date: "2023",
             github: "https://github.com/AhmedBelaiboud24/Restaurant-L-clat-du-Go-t"
         },
@@ -108,24 +108,24 @@ const Project = () => {
             descriptionDetail: "Ce projet a été réalisé pour une agence de design, mettant en avant ses projets et ses compétences à travers un design moderne et interactif.",
             image: banana,
             moreImages: [banana1, banana2, banana3, banana4, banana5],
-            techs: ["React", "Figma", "CSS"],
-            date: "2023",
+            techs: ["WordPress",  "Elementor", "CSS"],
+            date: "2024",
             github: null
         },
         {
             title: "Portfolio John Doe",
             description: "Création d'un portfolio pour un développeur...",
-            descriptionDetail: "Ce projet a été réalisé pour un développeur souhaitant présenter ses compétences et ses projets à travers un design moderne et épuré.",
+            descriptionDetail: "Projet réalisé dans le cadre de ma formation OpenClassrooms. Conception d’un portfolio personnel moderne, responsive et animé.",
             image: Johndoe,
             moreImages: [JohnDoe1, JohnDoe2, JohnDoe3, JohnDoe4],
-            techs: ["React", "Material UI"],
-            date: "2022",
+            techs: ["HTML", "Bootstrap"],
+            date: "2023",
             github: "https://github.com/AhmedBelaiboud24/Portfolio-John-Doe"
         },
         {
             title: "La Maison Jungle",
             description: "Un projet React pour gérer des plantes...",
-            descriptionDetail: "Ce projet a été réalisé pour une entreprise de jardinage, mettant en avant ses services et ses projets à travers un design moderne et interactif.",
+            descriptionDetail: "Projet réalisé dans le cadre de ma formation OpenClassrooms. Création d’une application web de gestion de plantes avec filtres dynamiques et panier interactif.",
             image: LMJ,
             moreImages: [lmj1, lmj2, lmj3],
             techs: ["React", "CSS"],
@@ -135,7 +135,7 @@ const Project = () => {
         {
             title: "AzertyType",
             description: "Un projet JavaScript pour pratiquer la frappe...",
-            descriptionDetail: "Ce projet a été réalisé pour pratiquer la frappe, mettant en avant ses services et ses projets à travers un design moderne et interactif.",
+            descriptionDetail: "Projet réalisé dans le cadre de ma formation OpenClassrooms. Développement d’une application d’entraînement à la frappe clavier avec JavaScript.",
             image: AzertyType,
             moreImages: [azerty1],
             techs: ["JavaScript", "HTML", "CSS"],
