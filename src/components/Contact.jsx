@@ -20,7 +20,7 @@ function Contact() {
                     <div style={{ borderLeft: '4px solid #61dafb', paddingLeft: 24, marginBottom:80, marginLeft: 24 }}>
                         <span style={{ color: '#61dafb', fontWeight: 600, fontSize: 32 }}>Contact</span>
                     </div>
-                    <h2 style={{ color: '#fff', fontWeight: 700, fontSize: 40, marginBottom: 150, lineHeight: 1.1 }}>Vous avez un projet ?<br />Parlons-on !</h2>
+                    <h2 style={{ color: '#fff', fontWeight: 700, fontSize: 40, marginBottom: 160, lineHeight: 1.1, marginLeft: 32 }}>Vous avez un projet ?<br />Parlons-on !</h2>
                     
                 </div>
                 <div className="col-lg-6">
