@@ -14,12 +14,30 @@ const toggleDrawer = (open) => (event) => {
 };
 
 const DrawerList = (
-    <div className="sideMenu" role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
-    <a href="#home">Accueil</a>
-    <a href="#about-detailed">À propos</a>
-    <a href="#competences">Compétences</a>
-    <a href="#projets">Projets</a>
-    <a href="#contact">Contact</a>
+    <div
+        className="sideMenu"
+        role="presentation"
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
+        style={{
+            minWidth: '70vw',
+            maxWidth: 340,
+            background: '#181c1f',
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '40px 0',
+            gap: 24,
+            boxShadow: '2px 0 16px #0008',
+        }}
+    >
+        <a href="#home" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Accueil</a>
+        <a href="#about-detailed" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>À propos</a>
+        <a href="#competences" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Compétences</a>
+        <a href="#projets" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Projets</a>
+        <a href="#contact" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Contact</a>
     </div>
 );
 
