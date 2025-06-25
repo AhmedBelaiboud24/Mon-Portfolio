@@ -62,7 +62,7 @@ function About() {
                                     variant="outlined" 
                                     color="primary" 
                                     component="a"
-                                    href="/Mon-Cv-Dev.pdf" 
+                                    href="/Cv.pdf" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     sx={{ borderRadius: 5, fontFamily: 'montserrat, sans-serif', fontSize: 14 }}
