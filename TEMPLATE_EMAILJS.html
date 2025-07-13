@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Message - Portfolio Ahmed Belaiboud</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 20px;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .info-section {
+            background: rgba(59, 130, 246, 0.05);
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #1d4ed8;
+            min-width: 100px;
+            margin-right: 15px;
+        }
+        
+        .info-value {
+            color: #333;
+            flex: 1;
+        }
+        
+        .message-section {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .message-section h3 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .message-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            white-space: pre-wrap;
+            line-height: 1.7;
+        }
+        
+        .footer {
+            background: #f1f5f9;
+            padding: 25px 30px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .tech-info {
+            background: rgba(100, 116, 139, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-info p {
+            font-size: 12px;
+            color: #64748b;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>📧 Nouveau Message</h1>
+            <p>Portfolio Ahmed Belaiboud</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-section">
+                <div class="info-row">
+                    <span class="info-label">👤 Nom :</span>
+                    <span class="info-value">{{from_name}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">📧 Email :</span>
+                    <span class="info-value">{{from_email}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">📋 Sujet :</span>
+                    <span class="info-value">{{subject}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">📅 Date :</span>
+                    <span class="info-value">{{sent_date}} à {{sent_time}}</span>
+                </div>
+            </div>
+            
+            <div class="message-section">
+                <h3>💬 Message</h3>
+                <div class="message-content">{{message}}</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Portfolio Ahmed Belaiboud</strong></p>
+            <p>Message reçu via le formulaire de contact</p>
+            
+            <div class="tech-info">
+                <p><strong>Informations techniques :</strong></p>
+                <p>🌐 URL : {{page_url}}</p>
+                <p>🔄 User Agent : {{user_agent}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

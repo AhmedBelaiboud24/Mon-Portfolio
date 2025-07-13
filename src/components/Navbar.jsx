@@ -1,104 +1,177 @@
-import React, { useState } from 'react';
-import { Button, Drawer } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-
+import React, { useState, useEffect } from 'react';
 
 function Navbar() {
-const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    return;
-    }
-    setOpen(open);
-};
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-const DrawerList = (
-    <div
-        className="sideMenu"
-        role="presentation"
-        onClick={toggleDrawer(false)}
-        onKeyDown={toggleDrawer(false)}
-        style={{
-            minWidth: '70vw',
-            maxWidth: 340,
-            background: '#181c1f',
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '40px 0',
-            gap: 24,
-            boxShadow: '2px 0 16px #0008',
-        }}
-    >
-        <a href="#home" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Accueil</a>
-        <a href="#about-detailed" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>À propos</a>
-        <a href="#competences" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Compétences</a>
-        <a href="#projets" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Projets</a>
-        <a href="#contact" style={{ color: '#fff', fontWeight: 700, fontSize: 22, textDecoration: 'none', margin: '12px 0', letterSpacing: 1, width: '100%', textAlign: 'center', borderRadius: 8, padding: 10, transition: 'background 0.2s, color 0.2s' }}>Contact</a>
-    </div>
-);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 100;
+      setScrolled(isScrolled);
+    };
 
-return (
-    <>
-    <nav
-      className="navbar d-flex flex-column align-items-center justify-content-center mt-4"
-      style={{ background: 'transparent', border: 'none', boxShadow: 'none', minHeight: 75, position: 'relative' }}
-    >
-      <div
-        className="d-flex flex-row align-items-center justify-content-between w-100 mb-4"
-        style={{ maxWidth: 1200, width: '100%', padding: '0 32px' }}
-      >
-        {/* Logo à gauche */}
-        <div className="d-flex align-items-center" style={{ minWidth: 220, minHeight: 48 }}>
-          {/* Logo custom */}
-          <span style={{
-            background: '#fff',
-            color: '#111',
-            borderRadius: 16,
-            padding: '6px 18px',
-            fontWeight: 700,
-            fontSize: 20,
-            fontFamily: 'Pacifico, cursive',
-            letterSpacing: 1,
-            marginRight: 12,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
-          }}>
-            Belaiboud
-          </span>
-          <span style={{
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: 20,
-            fontFamily: 'Pacifico, cursive',
-            letterSpacing: 1
-          }}>
-            Ahmed
-          </span>
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: '#home', label: 'Accueil', icon: 'bi-house-door' },
+    { href: '#about-detailed', label: 'À propos', icon: 'bi-person' },
+    { href: '#formations', label: 'Formations', icon: 'bi-mortarboard' },
+    { href: '#competences', label: 'Compétences', icon: 'bi-gear' },
+    { href: '#projets', label: 'Projets', icon: 'bi-code-square' },
+    { href: '#contact', label: 'Contact', icon: 'bi-envelope' }
+  ];
+
+  return (
+    <nav className={`navbar navbar-expand-lg navbar-dark fixed-top navbar-modern ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        {/* Logo moderne */}
+        <a className="navbar-brand d-flex align-items-center" href="#home">
+          <div className="d-flex align-items-center">
+            <div className="position-relative me-3">
+              <div 
+                className="rounded-circle d-flex align-items-center justify-content-center"
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  background: 'var(--primary-gradient)',
+                  boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)'
+                }}
+              >
+                <span className="text-white fw-bold fs-4">AB</span>
+              </div>
+              <div 
+                className="position-absolute top-0 start-0 rounded-circle"
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  border: '2px solid rgba(59, 130, 246, 0.3)',
+                  animation: 'pulse 2s infinite'
+                }}
+              ></div>
+            </div>
+            <div>
+              <div className="gradient-text fw-bold fs-5 mb-0" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Ahmed Belaiboud
+              </div>
+              <small className="text-muted" style={{ fontSize: '0.75rem', fontFamily: 'JetBrains Mono, monospace' }}>
+                &lt;/Développeur&gt;
+              </small>
+            </div>
+          </div>
+        </a>
+
+        {/* Toggle button moderne */}
+        <button 
+          className="navbar-toggler border-0 p-2" 
+          type="button" 
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen}
+          style={{
+            background: 'var(--glass-bg)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '12px'
+          }}
+        >
+          <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '24px', height: '18px' }}>
+            <span 
+              className="bg-light mb-1"
+              style={{
+                width: '100%',
+                height: '2px',
+                borderRadius: '1px',
+                transition: 'all 0.3s ease',
+                transform: isMenuOpen ? 'rotate(45deg) translate(6px, 6px)' : 'none'
+              }}
+            ></span>
+            <span 
+              className="bg-light mb-1"
+              style={{
+                width: '100%',
+                height: '2px',
+                borderRadius: '1px',
+                transition: 'all 0.3s ease',
+                opacity: isMenuOpen ? '0' : '1'
+              }}
+            ></span>
+            <span 
+              className="bg-light"
+              style={{
+                width: '100%',
+                height: '2px',
+                borderRadius: '1px',
+                transition: 'all 0.3s ease',
+                transform: isMenuOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'none'
+              }}
+            ></span>
+          </div>
+        </button>
+
+        {/* Navigation moderne */}
+        <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav ms-auto">
+            {navItems.map((item, index) => (
+              <li key={index} className="nav-item mx-1">
+                <a 
+                  className="nav-link d-flex align-items-center px-3 py-2 rounded-pill position-relative"
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    transition: 'all 0.3s ease',
+                    fontWeight: '500',
+                    color: 'var(--text-secondary)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'var(--glass-bg)';
+                    e.target.style.color = 'var(--text-primary)';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'transparent';
+                    e.target.style.color = 'var(--text-secondary)';
+                    e.target.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <i className={`${item.icon} me-2 d-lg-none`}></i>
+                  {item.label}
+                  <span 
+                    className="position-absolute bottom-0 start-50 translate-middle-x"
+                    style={{
+                      width: '0',
+                      height: '2px',
+                      background: 'var(--primary-gradient)',
+                      borderRadius: '1px',
+                      transition: 'width 0.3s ease'
+                    }}
+                  ></span>
+                </a>
+              </li>
+            ))}
+            
+            {/* Bouton CTA */}
+            <li className="nav-item ms-3 d-none d-lg-block">
+              <a 
+                href="#contact" 
+                className="btn btn-modern btn-primary-modern btn-sm"
+                style={{
+                  fontSize: '0.85rem',
+                  padding: '8px 20px'
+                }}
+              >
+                <i className="bi bi-rocket-takeoff me-1"></i>
+                Travaillons ensemble
+              </a>
+            </li>
+          </ul>
         </div>
-        {/* Liens à droite */}
-        <div className="d-none d-md-flex ms-auto" style={{ gap: 32, display: 'flex' }}>
-          <a className="nav-link px-3" href="#home" style={{ color: '#fff', fontWeight: 600, fontSize: 16 }}>Accueil</a>
-          <a className="nav-link px-3" href="#about-detailled" style={{ color: '#fff', fontWeight: 600, fontSize: 16 }}>À propos</a>
-          <a className="nav-link px-3" href="#competances" style={{ color: '#fff', fontWeight: 600, fontSize: 16 }}>Compétences</a>
-          <a className="nav-link px-3" href="#projets" style={{ color: '#fff', fontWeight: 600, fontSize: 16 }}>Projets</a>
-          <a className="nav-link px-3" href="#contact" style={{ color: '#fff', fontWeight: 600, fontSize: 16 }}>Contact</a>
-        </div>
-        {/* Menu burger mobile */}
-        <Button className="d-md-none ms-2" onClick={toggleDrawer(true)} style={{ color: '#fff' }}>
-          <MenuIcon />
-        </Button>
       </div>
-      {/* Trait blanc sous le header, centré et pas sur toute la largeur */}
-      <div style={{ width: '70%', height: 2, background: '#fff', borderRadius: 2, marginTop: 8 }}></div>
     </nav>
-    <Drawer open={open} onClose={toggleDrawer(false)}>
-      {DrawerList}
-    </Drawer>
-    </>
-);
+  );
 }
 
 export default Navbar;
