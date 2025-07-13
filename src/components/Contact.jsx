@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { sendContactEmail, initEmailJS } from '../services/emailService';
+import React, { useState, useCallback } from "react";
+import { sendContactEmail } from '../services/emailService';
+import { useAOS } from '../hooks/useAOS';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -14,16 +13,13 @@ function Contact() {
     const [submitStatus, setSubmitStatus] = useState(null);
     const [errors, setErrors] = useState({});
 
-    useEffect(() => {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
-        // Initialiser EmailJS
-        initEmailJS();
-    }, []);
+    // Initialisation optimisée d'AOS
+    useAOS({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;

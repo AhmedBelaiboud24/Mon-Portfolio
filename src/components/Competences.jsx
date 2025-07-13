@@ -96,7 +96,7 @@ function Competances() {
                                     <div className="mb-3">
                                         <i className="bi bi-folder fs-1 gradient-text-accent"></i>
                                     </div>
-                                    <h3 className="fw-bold text-light mb-2">20+</h3>
+                                    <h3 className="fw-bold text-light mb-2">10+</h3>
                                     <p className="text-muted mb-0">Projets réalisés</p>
                                 </div>
                                 <div className="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">

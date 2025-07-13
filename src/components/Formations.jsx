@@ -1,5 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import react from '../assets/web-development.png';
+
+// Lazy loading d'AOS
+let AOS = null;
+let isAOSLoaded = false;
+
+const loadAOS = async () => {
+    if (!isAOSLoaded) {
+        try {
+            const aosModule = await import('aos');
+            await import('aos/dist/aos.css');
+            AOS = aosModule.default;
+            isAOSLoaded = true;
+        } catch (error) {
+            console.error('Erreur lors du chargement d\'AOS:', error);
+        }
+    }
+    return AOS;
+};
 
 function Formations() {
     const formations = [
@@ -57,6 +75,23 @@ function Formations() {
         { name: "Git & GitHub", issuer: "OpenClassrooms", year: "2024", verified: true },
         { name: "TypeScript", issuer: "OpenClassrooms", year: "2024", verified: true }
     ];
+
+    useEffect(() => {
+        // Chargement asynchrone d'AOS
+        const initializeAOS = async () => {
+            const aos = await loadAOS();
+            if (aos) {
+                aos.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 100
+                });
+            }
+        };
+        
+        initializeAOS();
+    }, []);
 
     return (
         <section id="formations" className="py-5">

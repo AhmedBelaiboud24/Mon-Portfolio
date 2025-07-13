@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import SlideForm from './SlideForm';
+import { lazyLoadImages } from '../utils/imageOptimization';
 import photo from '../assets/Photo-perso.png';
 
 function About() {
